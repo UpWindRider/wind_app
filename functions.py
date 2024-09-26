@@ -1,7 +1,10 @@
 import requests
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def dibujar_flecha(angulo, velocidad, velocidad_rafaga):
 
@@ -52,7 +55,7 @@ def dibujar_flecha(angulo, velocidad, velocidad_rafaga):
 
 def get_data():
   # os.getenv obtiene el string definido para la variable de entorno
-  url = "https://api.thingspeak.com/channels/1506798/feeds.json?results=1"
+  url = os.getenv('URL')
 
   print(f"\n\n URL: ${url} \n\n ")
   # Hacer la solicitud GET
